@@ -1,0 +1,8 @@
+FROM node:16
+WORKDIR /app-node
+ARG PORT_BUILD=3030
+ENV PORT=$PORT_BUILD
+EXPOSE $PORT_BUILD
+COPY . .
+RUN yarn install 
+ENTRYPOINT yarn dev
